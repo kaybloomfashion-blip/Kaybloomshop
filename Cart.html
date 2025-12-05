@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cart - KayBloom Fashion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>KayBloom Fashion</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Shop</a>
+        <a href="cart.html">Cart</a>
+    </nav>
+</header>
+
+<h2>Your Cart</h2>
+
+<div id="cart-items"></div>
+
+<a href="checkout.html" class="btn">Proceed to Checkout</a>
+
+<script>
+const products = {
+    1: {name:"Floral Dress", price:15000, img:"dress1.jpg"},
+    2: {name:"Black Bodycon", price:18000, img:"dress2.jpg"}
+};
+
+let cart = JSON.parse(localStorage.getItem("cart") || "[]");
+
+let html = "";
+let total = 0;
+
+cart.forEach(id=>{
+    html += `<p>${products[id].name} — ₦${products[id].price}</p>`;
+    total += products[id].price;
+});
+
+document.getElementById("cart-items").innerHTML = html + `<h3>Total: ₦${total}</h3>`;
+</script>
+
+</body>
+</html>
