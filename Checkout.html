@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout - KayBloom Fashion</title>
+</head>
+<body>
+
+<h2>Checkout</h2>
+
+<script src="https://js.paystack.co/v1/inline.js"></script>
+
+<button onclick="payNow()">Pay Now</button>
+
+<script>
+function payNow() {
+    let total = 0;
+    const products = {
+        1: {price:15000},
+        2: {price:18000}
+    };
+
+    let cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    cart.forEach(id => total += products[id].price);
+
+    var handler = PaystackPop.setup({
+        key: "YOUR_PUBLIC_KEY_HERE",
+        email: "customer@example.com",
+        amount: total * 100, // kobo
+        currency: "NGN",
+        callback: function(response){
+            alert("Payment successful! Ref: " + response.reference);
+        }
+    });
+
+    handler.openIframe();
+}
+</script>
+
+</body>
+</html>
