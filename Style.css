@@ -1,0 +1,196 @@
+/* KayBloom Fashion — Luxury Classy (Brown Theme) */
+:root {
+  --bg: #faf7f5;
+  --primary: #5a381e;     /* deep brown */
+  --secondary: #8c5a3c;   /* warm brown */
+  --text: #2b2b2b;
+  --muted: #7a6b64;
+  --white: #ffffff;
+  --max-width: 1100px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Georgia", serif;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+.site-header {
+  background: var(--white);
+  border-bottom: 1px solid #eee;
+  padding: 15px 0;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand h1 {
+  color: var(--primary);
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+
+.brand .tag {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.main-nav a {
+  margin-left: 15px;
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.hero-left h2 {
+  font-size: 32px;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.hero-left p {
+  color: var(--muted);
+  margin-bottom: 15px;
+}
+
+.btn {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 10px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.hero-right img {
+  max-width: 320px;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(90, 56, 30, 0.12);
+}
+
+/* Grid & Cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.card {
+  background: var(--white);
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.card h4 {
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+
+.price {
+  color: var(--secondary);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+/* Product Page */
+.product-single {
+  display: flex;
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.product-single img {
+  width: 360px;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.product-info h2 {
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.product-info p {
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+/* Cart */
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.cart-table th,
+.cart-table td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+  color: var(--muted);
+}
+
+/* Responsive */
+@media(max-width: 800px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .product-single {
+    flex-direction: column;
+  }
+
+  .product-single img {
+    width: 100%;
+    height: auto;
+  }
+
+  .main-nav a {
+    margin-left: 10px;
+  }
+}
